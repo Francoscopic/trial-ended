@@ -1,0 +1,127 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: "Bricolage Grotesque", "Helvetica Neue", Arial, sans-serif;
+    color: #14213d;
+    background:
+        radial-gradient(60rem 40rem at 20% -10%, #24365e, transparent 60%),
+        #14213d;
+}
+
+.page {
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    padding: 1.5rem;
+}
+
+.ticket {
+    display: grid;
+    /* grid-template-columns: 1fr 13rem; */
+    width: min(100%, 52rem);
+    filter: drop-shadow(0 30px 40px rgba(0, 0, 0, 0.35));
+}
+
+@media (max-width: 720px) {
+    .ticket {
+        /* grid-template-columns: 1fr; */
+    }
+}
+.ticket__main {
+    background: #eef1f6;
+    position: relative;
+
+    padding: clamp(2rem, 6vw, 4rem);
+    border-radius: 22px;
+}
+@media (max-width: 720px) {
+    .ticket__main {
+        border-radius: 22px;
+    }
+}
+.ticket__brand {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    margin-bottom: 1.75rem;
+}
+.ticket__brand-mark {
+    display: grid;
+    place-items: center;
+    width: 2.9rem;
+    height: 2.9rem;
+    border-radius: 24px;
+}
+.ticket__brand-mark img {
+    width: 100px;
+}
+.ticket__brand-copy {
+    display: grid;
+    gap: 0.15rem;
+}
+.ticket__brand-name {
+    font-size: 1.1rem;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    color: #14213d;
+}
+.ticket__brand-tag {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #4a5875;
+}
+.ticket__title {
+    margin: 0;
+    max-width: 14ch;
+    font-size: clamp(2.2rem, 6vw, 3.8rem);
+    font-weight: 800;
+    line-height: 1.02;
+    letter-spacing: -0.03em;
+    text-wrap: balance;
+}
+.ticket__text {
+    margin: 1.25rem 0 2rem;
+    font-size: 1.25rem;
+    color: #4a5875;
+}
+.ticket__button {
+    display: inline-block;
+    padding: 0.95rem 1.6rem;
+    border-radius: 999px;
+    background: #14213d;
+    color: #eef1f6;
+    font:
+        600 1rem/1 "Bricolage Grotesque",
+        "Helvetica Neue",
+        Arial,
+        sans-serif;
+    text-decoration: none;
+    transition:
+        transform 0.15s ease,
+        background 0.15s ease;
+}
+.ticket__button:hover {
+    background: #24365e;
+    transform: translateY(-2px);
+}
+.ticket__button:active {
+    transform: translateY(0);
+}
+.ticket__button:focus-visible {
+    outline: 3px solid #d6336c;
+    outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .ticket__button {
+        transition: none;
+    }
+}
